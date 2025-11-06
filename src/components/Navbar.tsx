@@ -87,8 +87,7 @@ const Navbar = () => {
             </button>
             <Button
               onClick={() => navigateToPage("/signin")}
-              variant="outline"
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              variant="nav"
             >
               Sign In
             </Button>
@@ -139,8 +138,8 @@ const Navbar = () => {
               </button>
               <Button
                 onClick={() => navigateToPage("/signin")}
-                variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary w-full"
+                variant="nav"
+                className="w-full"
               >
                 Sign In
               </Button>

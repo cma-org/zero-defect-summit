@@ -10,6 +10,7 @@ const Hero = () => {
     minutes: 0,
     seconds: 0,
   });
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const targetDate = new Date("2025-12-09T09:00:00").getTime();
@@ -34,6 +35,15 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const scrollToRegister = () => {
     const element = document.getElementById("register");
     if (element) {
@@ -45,9 +55,10 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-100 ease-out"
         style={{
           backgroundImage: `url(${heroImage})`,
+          transform: `translateY(${scrollY * 0.5}px)`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/75"></div>

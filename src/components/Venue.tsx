@@ -30,8 +30,8 @@ const Venue = () => {
                 <div className="space-y-2 text-muted-foreground">
                   <p className="font-semibold text-foreground text-lg">{venueAddress}</p>
                   <p className="text-sm leading-relaxed">
-                    Survey No.83/1, Hyderabad Knowledge City, Plot No.5, Survey No. 83/1, Madhapur, Hyderabad,
-                    Hyderabad, Telangana - 500081
+                    Survey No. 64 15, 24 25 & 26, Hitech City Main Rd, HUDA Techno Enclave, HITEC City, Hyderabad,
+                    Telangana 500081
                   </p>
                   <p className="font-medium">India</p>
                 </div>

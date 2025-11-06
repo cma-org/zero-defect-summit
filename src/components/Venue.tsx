@@ -2,10 +2,10 @@ import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Venue = () => {
-  const venueAddress = "ITC Kohenur, a Luxury Collection Hotel, Hyderabad";
+  const venueAddress = "Avasa, Hyderabad";
   const fullAddress =
     "Survey No. 64 15, 24 25 & 26, Hitech City Main Rd, HUDA Techno Enclave, HITEC City, Hyderabad, Telangana 500081, India";
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueAddress + " " + fullAddress)}`;
+  const googleMapsUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.26501910255!2d78.38110807593334!3d17.44702510108298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93df8cdfaf93%3A0x84d4109f7434d64c!2sAvasa!5e0!3m2!1sen!2sus!4v1762428078847!5m2!1sen!2sus`;
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-secondary/30">

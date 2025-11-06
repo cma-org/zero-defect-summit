@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +20,26 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+    if (!isHomePage) {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
+    setIsMobileMenuOpen(false);
+  };
+
+  const navigateToPage = (path: string) => {
+    navigate(path);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -51,7 +71,7 @@ const Navbar = () => {
               Speaker
             </button>
             <button
-              onClick={() => scrollToSection("agenda")}
+              onClick={() => navigateToPage("/agenda")}
               className="text-primary-foreground hover:text-accent transition-colors"
             >
               Agenda
@@ -63,7 +83,7 @@ const Navbar = () => {
               Sponsors
             </button>
             <Button
-              onClick={() => scrollToSection("register")}
+              onClick={() => navigateToPage("/registration")}
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
             >
               Register Now
@@ -96,7 +116,7 @@ const Navbar = () => {
                 Speaker
               </button>
               <button
-                onClick={() => scrollToSection("agenda")}
+                onClick={() => navigateToPage("/agenda")}
                 className="text-primary-foreground hover:text-accent transition-colors text-left"
               >
                 Agenda
@@ -108,7 +128,7 @@ const Navbar = () => {
                 Sponsors
               </button>
               <Button
-                onClick={() => scrollToSection("register")}
+                onClick={() => navigateToPage("/registration")}
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full"
               >
                 Register Now

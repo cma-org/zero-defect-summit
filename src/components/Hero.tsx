@@ -65,80 +65,80 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
+      <div className="relative z-10 container mx-auto px-4 pt-24 md:pt-32 pb-12 md:pb-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Side - Text Content */}
-            <div className="text-center lg:text-left">
-              <div className="inline-block bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-6 py-2 mb-6 animate-fade-in">
-                <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <div className="inline-block bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-4 md:px-6 py-2 mb-4 md:mb-6 animate-fade-in">
+                <span className="text-accent font-semibold text-xs md:text-sm uppercase tracking-wider">
                   Premier Pharmaceutical Training Event
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
                 Zero-Defect Tablet
                 <br />
                 <span className="text-accent">Manufacturing Workshop</span>
               </h1>
 
-              <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 font-light animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+              <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 mb-6 md:mb-8 font-light animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
                 Master Compression & Coating Excellence
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center gap-6 mb-8 text-primary-foreground animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 md:gap-6 mb-6 md:mb-0 text-primary-foreground animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
                 <div className="flex items-center gap-2">
-                  <Calendar className="text-accent" size={24} />
-                  <span className="text-lg">9-10 December 2025</span>
+                  <Calendar className="text-accent" size={20} />
+                  <span className="text-sm md:text-base lg:text-lg">9-10 December 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="text-accent" size={24} />
-                  <span className="text-lg">Avasa Hotel, Hyderabad</span>
+                  <MapPin className="text-accent" size={20} />
+                  <span className="text-sm md:text-base lg:text-lg">Avasa Hotel, Hyderabad</span>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'both' }}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in hidden lg:flex" style={{ animationDelay: '1s', animationFillMode: 'both' }}>
               </div>
 
-              <div className="text-primary-foreground/70 text-sm animate-fade-in" style={{ animationDelay: '1.2s', animationFillMode: 'both' }}>
+              <div className="text-primary-foreground/70 text-xs md:text-sm animate-fade-in hidden lg:block" style={{ animationDelay: '1.2s', animationFillMode: 'both' }}>
                 <p>Speaker: <span className="text-accent font-semibold">Fred A. Rowley</span> - President, Solid Dosage Training Inc., USA</p>
               </div>
             </div>
 
             {/* Right Side - Countdown Timer */}
-            <div className="animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
-              <div className="bg-primary-foreground/5 backdrop-blur-md rounded-2xl p-6 border border-primary-foreground/20">
-                <p className="text-primary-foreground/80 mb-4 text-center text-xs uppercase tracking-wider">
+            <div className="animate-fade-in order-1 lg:order-2" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
+              <div className="bg-primary-foreground/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-primary-foreground/20">
+                <p className="text-primary-foreground/80 mb-3 md:mb-4 text-center text-xs uppercase tracking-wider">
                   Event Starts In
                 </p>
-                <div className="grid grid-cols-4 gap-3">
+                <div className="grid grid-cols-4 gap-2 md:gap-3">
                   {[
                     { value: timeLeft.days, label: "Days" },
                     { value: timeLeft.hours, label: "Hours" },
-                    { value: timeLeft.minutes, label: "Minutes" },
-                    { value: timeLeft.seconds, label: "Seconds" },
+                    { value: timeLeft.minutes, label: "Min" },
+                    { value: timeLeft.seconds, label: "Sec" },
                   ].map((item, index) => (
                     <div
                       key={index}
-                      className="bg-primary-foreground/10 backdrop-blur-md rounded-lg p-3 border border-primary-foreground/20 text-center"
+                      className="bg-primary-foreground/10 backdrop-blur-md rounded-lg p-2 md:p-3 border border-primary-foreground/20 text-center"
                     >
-                      <div className="text-2xl md:text-3xl font-bold text-accent mb-1">
+                      <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent mb-1">
                         {item.value.toString().padStart(2, "0")}
                       </div>
-                      <div className="text-[10px] text-primary-foreground/80 uppercase tracking-wider">
+                      <div className="text-[9px] md:text-[10px] text-primary-foreground/80 uppercase tracking-wider">
                         {item.label}
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex gap-3 mt-6">
+                <div className="flex flex-col sm:flex-row gap-2 md:gap-3 mt-4 md:mt-6">
                   <Button
                     onClick={scrollToRegister}
                     size="lg"
-                    className="bg-accent hover:bg-accent/90 text-accent-foreground text-base px-6 py-5 font-semibold shadow-glow flex-1"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm md:text-base px-4 md:px-6 py-4 md:py-5 font-semibold shadow-glow flex-1"
                   >
-                    Register Now - ₹35,000 + GST
+                    Register Now
                   </Button>
                   <Button
                     onClick={() => {
@@ -147,11 +147,16 @@ const Hero = () => {
                     }}
                     size="lg"
                     variant="nav"
-                    className="text-base px-6 py-5 font-semibold flex-1"
+                    className="text-sm md:text-base px-4 md:px-6 py-4 md:py-5 font-semibold flex-1"
                   >
                     Learn More
                   </Button>
                 </div>
+              </div>
+
+              <div className="text-primary-foreground/70 text-xs text-center mt-4 lg:hidden">
+                <p>Speaker: <span className="text-accent font-semibold">Fred A. Rowley</span></p>
+                <p className="text-[10px]">President, Solid Dosage Training Inc., USA</p>
               </div>
             </div>
           </div>

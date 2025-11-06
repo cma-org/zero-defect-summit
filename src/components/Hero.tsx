@@ -69,7 +69,7 @@ const Hero = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Side - Text Content */}
-            <div className="text-center lg:text-left order-2 lg:order-1">
+            <div className="text-center lg:text-left">
               <div className="inline-block bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-4 md:px-6 py-2 mb-4 md:mb-6 animate-fade-in">
                 <span className="text-accent font-semibold text-xs md:text-sm uppercase tracking-wider">
                   Premier Pharmaceutical Training Event
@@ -106,7 +106,7 @@ const Hero = () => {
             </div>
 
             {/* Right Side - Countdown Timer */}
-            <div className="animate-fade-in order-1 lg:order-2" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
+            <div className="animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
               <div className="bg-primary-foreground/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-primary-foreground/20">
                 <p className="text-primary-foreground/80 mb-3 md:mb-4 text-center text-xs uppercase tracking-wider">
                   Event Starts In

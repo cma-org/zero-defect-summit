@@ -73,8 +73,8 @@ const AgendaPage = () => {
               <Button
                 onClick={handlePrintAgenda}
                 size="lg"
-                variant="outline"
-                className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold text-base px-8"
+                variant="nav"
+                className="font-semibold text-base px-8"
               >
                 <Printer className="mr-2" size={20} />
                 PRINT AGENDA

@@ -124,8 +124,8 @@ const Hero = () => {
                 if (element) element.scrollIntoView({ behavior: "smooth" });
               }}
               size="lg"
-              variant="outline"
-              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 font-semibold"
+              variant="nav"
+              className="text-lg px-8 py-6 font-semibold"
             >
               Learn More
             </Button>

@@ -132,11 +132,11 @@ const Hero = () => {
                   ))}
                 </div>
 
-                <div className="flex flex-col gap-3 mt-6">
+                <div className="flex gap-3 mt-6">
                   <Button
                     onClick={scrollToRegister}
                     size="lg"
-                    className="bg-accent hover:bg-accent/90 text-accent-foreground text-base px-6 py-5 font-semibold shadow-glow w-full"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground text-base px-6 py-5 font-semibold shadow-glow flex-1"
                   >
                     Register Now - ₹35,000 + GST
                   </Button>
@@ -147,7 +147,7 @@ const Hero = () => {
                     }}
                     size="lg"
                     variant="nav"
-                    className="text-base px-6 py-5 font-semibold w-full"
+                    className="text-base px-6 py-5 font-semibold flex-1"
                   >
                     Learn More
                   </Button>

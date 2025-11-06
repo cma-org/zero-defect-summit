@@ -1,0 +1,124 @@
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-primary/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          <div className="flex items-center space-x-2">
+            <div className="text-2xl font-bold text-primary-foreground">
+              <span className="text-accent">Zero-Defect</span> Tablet Manufacturing
+            </div>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-primary-foreground hover:text-accent transition-colors"
+            >
+              About Workshop
+            </button>
+            <button
+              onClick={() => scrollToSection("speaker")}
+              className="text-primary-foreground hover:text-accent transition-colors"
+            >
+              Speaker
+            </button>
+            <button
+              onClick={() => scrollToSection("agenda")}
+              className="text-primary-foreground hover:text-accent transition-colors"
+            >
+              Agenda
+            </button>
+            <button
+              onClick={() => scrollToSection("sponsors")}
+              className="text-primary-foreground hover:text-accent transition-colors"
+            >
+              Sponsors
+            </button>
+            <Button
+              onClick={() => scrollToSection("register")}
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
+            >
+              Register Now
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-primary-foreground"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden py-4 bg-primary/95 backdrop-blur-md">
+            <div className="flex flex-col space-y-4">
+              <button
+                onClick={() => scrollToSection("about")}
+                className="text-primary-foreground hover:text-accent transition-colors text-left"
+              >
+                About Workshop
+              </button>
+              <button
+                onClick={() => scrollToSection("speaker")}
+                className="text-primary-foreground hover:text-accent transition-colors text-left"
+              >
+                Speaker
+              </button>
+              <button
+                onClick={() => scrollToSection("agenda")}
+                className="text-primary-foreground hover:text-accent transition-colors text-left"
+              >
+                Agenda
+              </button>
+              <button
+                onClick={() => scrollToSection("sponsors")}
+                className="text-primary-foreground hover:text-accent transition-colors text-left"
+              >
+                Sponsors
+              </button>
+              <Button
+                onClick={() => scrollToSection("register")}
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full"
+              >
+                Register Now
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

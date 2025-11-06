@@ -85,10 +85,10 @@ const Footer = () => {
                 © 2025 Axygen Pharmatech Pvt. Ltd. All rights reserved.
               </p>
               <div className="flex gap-6">
-                <a href="#" className="hover:text-accent transition-colors">
+                <a href="/privacy" className="hover:text-accent transition-colors">
                   Privacy Policy
                 </a>
-                <a href="#" className="hover:text-accent transition-colors">
+                <a href="/terms" className="hover:text-accent transition-colors">
                   Terms & Conditions
                 </a>
               </div>

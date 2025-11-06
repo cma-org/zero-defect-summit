@@ -9,26 +9,31 @@ const AgendaPage = () => {
   const [activeDay, setActiveDay] = useState<"day1" | "day2">("day1");
 
   const day1Sessions = [
-    { time: "09:00 - 09:30", title: "Registration & Welcome Coffee", icon: Coffee, duration: "30 Minutes" },
-    { time: "09:30 - 11:00", title: "Fundamentals of Tablet Compression Technology", icon: Clock, duration: "1.5 Hours" },
-    { time: "11:00 - 11:15", title: "Coffee Break", icon: Coffee, duration: "15 Minutes" },
-    { time: "11:15 - 13:00", title: "Common Compression Defects & Root Cause Analysis", icon: Clock, duration: "1.75 Hours" },
-    { time: "13:00 - 14:00", title: "Lunch Break", icon: Utensils, duration: "1 Hour" },
-    { time: "14:00 - 15:30", title: "Tooling Selection & Optimization Strategies", icon: Clock, duration: "1.5 Hours" },
-    { time: "15:30 - 15:45", title: "Afternoon Tea", icon: Coffee, duration: "15 Minutes" },
-    { time: "15:45 - 17:30", title: "Hands-On Problem Solving & Case Studies", icon: Clock, duration: "1.75 Hours" },
+    { time: "09:30 - 09:45", title: "Welcome & Workshop Overview", icon: Clock, duration: "15 Minutes", description: "Introduction to objectives, FDA expectations, and high-impact learning format" },
+    { time: "09:45 - 11:15", title: "Demystifying the Tablet Press: Understanding 10 Critical Operating Parameters (CPPs) That FDA Evaluates", icon: Clock, duration: "1.5 Hours", description: "Deep-dive discussion with real equipment images & process mapping" },
+    { time: "11:15 - 11:30", title: "Tea Break", icon: Coffee, duration: "15 Minutes", description: "" },
+    { time: "11:30 - 12:30", title: "The Misinterpretation of 'Compression Force' — Understanding Force vs. Pressure vs. Dwell Time", icon: Clock, duration: "1 Hour", description: "Scientific explanation with failure scenarios" },
+    { time: "12:30 - 13:15", title: "Lunch Break", icon: Utensils, duration: "45 Minutes", description: "" },
+    { time: "13:15 - 14:00", title: "Setting Reject Limits for Tablet Presses — Optimized Procedures & Regulatory Expectations", icon: Clock, duration: "45 Minutes", description: "Includes automatic vs manual rejection logic" },
+    { time: "14:00 - 14:30", title: "Case Study Review (2 Real-Time Incidents)", icon: Clock, duration: "30 Minutes", description: "Discussion & interactive troubleshooting" },
+    { time: "14:30 - 14:45", title: "Break", icon: Coffee, duration: "15 Minutes", description: "" },
+    { time: "14:45 - 15:30", title: "Oversized / Overweight Tablets — Root Causes & Preventive Controls", icon: Clock, duration: "45 Minutes", description: "Mechanical & formulation-led causes" },
+    { time: "15:30 - 16:00", title: "Case Study Review (2 Real-Time Incidents)", icon: Clock, duration: "30 Minutes", description: "Failure/CAPA mapping" },
+    { time: "16:00 - 17:00", title: "Day Wrap-Up & Q&A", icon: Clock, duration: "1 Hour", description: "Key takeaways" },
   ];
 
   const day2Sessions = [
-    { time: "09:00 - 09:30", title: "Day 1 Recap & Q&A", icon: Clock, duration: "30 Minutes" },
-    { time: "09:30 - 11:00", title: "Coating Pan Technology & Process Parameters", icon: Clock, duration: "1.5 Hours" },
-    { time: "11:00 - 11:15", title: "Coffee Break", icon: Coffee, duration: "15 Minutes" },
-    { time: "11:15 - 13:00", title: "Coating Defects: Prevention & Solutions", icon: Clock, duration: "1.75 Hours" },
-    { time: "13:00 - 14:00", title: "Lunch Break", icon: Utensils, duration: "1 Hour" },
-    { time: "14:00 - 15:30", title: "Quality Control & In-Process Testing", icon: Clock, duration: "1.5 Hours" },
-    { time: "15:30 - 15:45", title: "Afternoon Tea", icon: Coffee, duration: "15 Minutes" },
-    { time: "15:45 - 17:00", title: "Best Practices & Equipment Maintenance", icon: Clock, duration: "1.25 Hours" },
-    { time: "17:00 - 17:30", title: "Final Q&A & Certificate Distribution", icon: Clock, duration: "30 Minutes" },
+    { time: "09:30 - 09:45", title: "Recap of Day 1 & Kickoff for Coating Pan Discussions", icon: Clock, duration: "15 Minutes", description: "Alignment on problem statements" },
+    { time: "09:45 - 11:15", title: "Understanding the 10 Critical Coating Pan CPPs Monitored by FDA", icon: Clock, duration: "1.5 Hours", description: "Includes inlet/outlet temperature, pan speed, atomization pressure, pattern width" },
+    { time: "11:15 - 11:30", title: "Tea Break", icon: Coffee, duration: "15 Minutes", description: "" },
+    { time: "11:30 - 12:30", title: "Setting Up the Coating Pan for Success — Solution Prep, Gun Geometry, Spray Rate Validation, Droplet Control", icon: Clock, duration: "1 Hour", description: "Demonstration with schematics" },
+    { time: "12:30 - 13:15", title: "Lunch Break", icon: Utensils, duration: "45 Minutes", description: "" },
+    { time: "13:15 - 14:15", title: "Film Coating Defects: Identification, Root Cause Analysis & Corrective Strategies", icon: Clock, duration: "1 Hour", description: "Includes color variation, erosion, sticking, roughness, twinning, orange peel" },
+    { time: "14:15 - 14:45", title: "Case Study Review (2 Real-Time Incidents)", icon: Clock, duration: "30 Minutes", description: "Defect/CAPA" },
+    { time: "14:45 - 15:00", title: "Break", icon: Coffee, duration: "15 Minutes", description: "" },
+    { time: "15:00 - 15:45", title: "Aqueous Film Coating Strategy to Achieve 99% Yield — End-to-End Parameter Optimization", icon: Clock, duration: "45 Minutes", description: "Throughput vs quality controls" },
+    { time: "15:45 - 16:15", title: "Case Study Review (2 Real-Time Incidents)", icon: Clock, duration: "30 Minutes", description: "Review of success stories" },
+    { time: "16:15 - 17:00", title: "Workshop Closure & Feedback", icon: Clock, duration: "45 Minutes", description: "Certificates / Next Steps" },
   ];
 
   const sessions = activeDay === "day1" ? day1Sessions : day2Sessions;
@@ -169,10 +174,15 @@ const AgendaPage = () => {
                         <h3 className="text-lg font-semibold text-foreground mb-1">
                           {session.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground flex items-center gap-1">
+                        <p className="text-sm text-muted-foreground flex items-center gap-1 mb-2">
                           <Clock size={14} />
                           {session.duration}
                         </p>
+                        {session.description && (
+                          <p className="text-sm text-muted-foreground">
+                            {session.description}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>

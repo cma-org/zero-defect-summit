@@ -50,11 +50,14 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-2">
+          <button
+            onClick={() => navigate("/")}
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+          >
             <div className="text-2xl font-bold text-primary-foreground">
               <span className="text-accent">Zero-Defect</span> Tablet Manufacturing
             </div>
-          </div>
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">

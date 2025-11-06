@@ -97,25 +97,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'both' }}>
-                <Button
-                  onClick={scrollToRegister}
-                  size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 font-semibold shadow-glow"
-                >
-                  Register Now - ₹35,000 + GST
-                </Button>
-                <Button
-                  onClick={() => {
-                    const element = document.getElementById("about");
-                    if (element) element.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  size="lg"
-                  variant="nav"
-                  className="text-lg px-8 py-6 font-semibold"
-                >
-                  Learn More
-                </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'both' }}>
               </div>
 
               <div className="text-primary-foreground/70 text-sm animate-fade-in" style={{ animationDelay: '1.2s', animationFillMode: 'both' }}>
@@ -125,11 +107,11 @@ const Hero = () => {
 
             {/* Right Side - Countdown Timer */}
             <div className="animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
-              <div className="bg-primary-foreground/5 backdrop-blur-md rounded-2xl p-8 border border-primary-foreground/20">
-                <p className="text-primary-foreground/80 mb-6 text-center text-sm uppercase tracking-wider">
+              <div className="bg-primary-foreground/5 backdrop-blur-md rounded-2xl p-6 border border-primary-foreground/20">
+                <p className="text-primary-foreground/80 mb-4 text-center text-xs uppercase tracking-wider">
                   Event Starts In
                 </p>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-4 gap-3">
                   {[
                     { value: timeLeft.days, label: "Days" },
                     { value: timeLeft.hours, label: "Hours" },
@@ -138,16 +120,37 @@ const Hero = () => {
                   ].map((item, index) => (
                     <div
                       key={index}
-                      className="bg-primary-foreground/10 backdrop-blur-md rounded-lg p-6 border border-primary-foreground/20 text-center"
+                      className="bg-primary-foreground/10 backdrop-blur-md rounded-lg p-3 border border-primary-foreground/20 text-center"
                     >
-                      <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                      <div className="text-2xl md:text-3xl font-bold text-accent mb-1">
                         {item.value.toString().padStart(2, "0")}
                       </div>
-                      <div className="text-xs text-primary-foreground/80 uppercase tracking-wider">
+                      <div className="text-[10px] text-primary-foreground/80 uppercase tracking-wider">
                         {item.label}
                       </div>
                     </div>
                   ))}
+                </div>
+
+                <div className="flex flex-col gap-3 mt-6">
+                  <Button
+                    onClick={scrollToRegister}
+                    size="lg"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground text-base px-6 py-5 font-semibold shadow-glow w-full"
+                  >
+                    Register Now - ₹35,000 + GST
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      const element = document.getElementById("about");
+                      if (element) element.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    size="lg"
+                    variant="nav"
+                    className="text-base px-6 py-5 font-semibold w-full"
+                  >
+                    Learn More
+                  </Button>
                 </div>
               </div>
             </div>

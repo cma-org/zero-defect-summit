@@ -3,20 +3,17 @@ import { Button } from "@/components/ui/button";
 
 const Venue = () => {
   const venueAddress = "ITC Kohenur, a Luxury Collection Hotel, Hyderabad";
-  const fullAddress = "Survey No.83/1, Hyderabad Knowledge City, Plot No.5, Survey No. 83/1, Madhapur, Hyderabad, Telangana - 500081, India";
+  const fullAddress =
+    "Survey No. 64 15, 24 25 & 26, Hitech City Main Rd, HUDA Techno Enclave, HITEC City, Hyderabad, Telangana 500081, India";
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueAddress + " " + fullAddress)}`;
-  
+
   return (
     <section className="py-20 bg-gradient-to-b from-background to-secondary/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Venue
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Our location and how you can get here
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Venue</h2>
+            <p className="text-xl text-muted-foreground">Our location and how you can get here</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 items-start">
@@ -31,11 +28,10 @@ const Venue = () => {
               <div className="text-center space-y-4">
                 <h3 className="text-2xl font-bold text-foreground">Address</h3>
                 <div className="space-y-2 text-muted-foreground">
-                  <p className="font-semibold text-foreground text-lg">
-                    {venueAddress}
-                  </p>
+                  <p className="font-semibold text-foreground text-lg">{venueAddress}</p>
                   <p className="text-sm leading-relaxed">
-                    Survey No.83/1, Hyderabad Knowledge City, Plot No.5, Survey No. 83/1, Madhapur, Hyderabad, Hyderabad, Telangana - 500081
+                    Survey No.83/1, Hyderabad Knowledge City, Plot No.5, Survey No. 83/1, Madhapur, Hyderabad,
+                    Hyderabad, Telangana - 500081
                   </p>
                   <p className="font-medium">India</p>
                 </div>
@@ -46,11 +42,7 @@ const Venue = () => {
                   asChild
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-6 font-semibold"
                 >
-                  <a
-                    href={googleMapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">
                     GET DIRECTIONS
                   </a>
                 </Button>

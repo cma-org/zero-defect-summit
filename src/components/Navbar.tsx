@@ -86,6 +86,13 @@ const Navbar = () => {
               Sponsors
             </button>
             <Button
+              onClick={() => navigateToPage("/signin")}
+              variant="outline"
+              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+            >
+              Sign In
+            </Button>
+            <Button
               onClick={() => navigateToPage("/registration")}
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
             >
@@ -130,6 +137,13 @@ const Navbar = () => {
               >
                 Sponsors
               </button>
+              <Button
+                onClick={() => navigateToPage("/signin")}
+                variant="outline"
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary w-full"
+              >
+                Sign In
+              </Button>
               <Button
                 onClick={() => navigateToPage("/registration")}
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full"

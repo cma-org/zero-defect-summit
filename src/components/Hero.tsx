@@ -56,23 +56,23 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-block bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-6 py-2 mb-6">
+          <div className="inline-block bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-6 py-2 mb-6 animate-fade-in">
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">
               Premier Pharmaceutical Training Event
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
             Zero-Defect Tablet
             <br />
             <span className="text-accent">Manufacturing Workshop</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 font-light">
+          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 font-light animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
             Master Compression & Coating Excellence
           </p>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12 text-primary-foreground">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12 text-primary-foreground animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
             <div className="flex items-center gap-2">
               <Calendar className="text-accent" size={24} />
               <span className="text-lg">9-10 December 2025</span>
@@ -84,7 +84,7 @@ const Hero = () => {
           </div>
 
           {/* Countdown Timer */}
-          <div className="mb-12">
+          <div className="mb-12 animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
             <p className="text-primary-foreground/80 mb-4 text-sm uppercase tracking-wider">
               Event Starts In
             </p>
@@ -110,7 +110,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'both' }}>
             <Button
               onClick={scrollToRegister}
               size="lg"
@@ -131,7 +131,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="mt-12 text-primary-foreground/70 text-sm">
+          <div className="mt-12 text-primary-foreground/70 text-sm animate-fade-in" style={{ animationDelay: '1.2s', animationFillMode: 'both' }}>
             <p>Speaker: <span className="text-accent font-semibold">Fred A. Rowley</span> - President, Solid Dosage Training Inc., USA</p>
           </div>
         </div>

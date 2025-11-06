@@ -25,7 +25,7 @@ const About = () => {
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               About the <span className="text-accent">Workshop</span>
             </h2>
@@ -36,7 +36,7 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <Card className="p-8 border-2 hover:shadow-elegant transition-all duration-300">
+            <Card className="p-8 border-2 hover:shadow-elegant transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
               <h3 className="text-2xl font-bold text-foreground mb-4">Workshop Overview</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 This hands-on workshop brings together pharmaceutical professionals to master the art and 
@@ -49,7 +49,7 @@ const About = () => {
               </p>
             </Card>
 
-            <Card className="p-8 bg-primary text-primary-foreground border-2 border-primary">
+            <Card className="p-8 bg-primary text-primary-foreground border-2 border-primary animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
               <h3 className="text-2xl font-bold mb-6">Key Learning Outcomes</h3>
               <ul className="space-y-3">
                 {keyTakeaways.map((item, index) => (
@@ -62,7 +62,7 @@ const About = () => {
             </Card>
           </div>
 
-          <div>
+          <div className="animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
             <h3 className="text-3xl font-bold text-center text-foreground mb-12">
               Who Should <span className="text-accent">Attend</span>
             </h3>
@@ -72,7 +72,7 @@ const About = () => {
                 return (
                   <Card
                     key={index}
-                    className="p-6 text-center hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 border-2"
+                    className="p-6 text-center hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 hover-scale border-2"
                   >
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4">
                       <Icon className="text-accent" size={32} />

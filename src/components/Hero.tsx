@@ -76,17 +76,26 @@ const Hero = () => {
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight animate-fade-in"
+                style={{ animationDelay: "0.2s", animationFillMode: "both" }}
+              >
                 Zero-Defect Tablet
                 <br />
                 <span className="text-accent">Manufacturing Workshop</span>
               </h1>
 
-              <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 mb-6 md:mb-8 font-light animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+              <p
+                className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 mb-6 md:mb-8 font-light animate-fade-in"
+                style={{ animationDelay: "0.4s", animationFillMode: "both" }}
+              >
                 Master Compression & Coating Excellence
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 md:gap-6 mb-6 md:mb-0 text-primary-foreground animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
+              <div
+                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 md:gap-6 mb-6 md:mb-0 text-primary-foreground animate-fade-in"
+                style={{ animationDelay: "0.6s", animationFillMode: "both" }}
+              >
                 <div className="flex items-center gap-2">
                   <Calendar className="text-accent" size={20} />
                   <span className="text-sm md:text-base lg:text-lg">9-10 December 2025</span>
@@ -97,16 +106,24 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in hidden lg:flex" style={{ animationDelay: '1s', animationFillMode: 'both' }}>
-              </div>
+              <div
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in hidden lg:flex"
+                style={{ animationDelay: "1s", animationFillMode: "both" }}
+              ></div>
 
-              <div className="text-primary-foreground/70 text-xs md:text-sm animate-fade-in hidden lg:block" style={{ animationDelay: '1.2s', animationFillMode: 'both' }}>
-                <p>Speaker: <span className="text-accent font-semibold">Fred A. Rowley</span> - President, Solid Dosage Training Inc., USA</p>
+              <div
+                className="text-primary-foreground/70 text-xs md:text-sm animate-fade-in hidden lg:block"
+                style={{ animationDelay: "1.2s", animationFillMode: "both" }}
+              >
+                <p>
+                  Speaker: <span className="text-accent font-semibold">Fred A. Rowley</span> - President, Solid Dosage
+                  Training Inc., USA
+                </p>
               </div>
             </div>
 
             {/* Right Side - Countdown Timer */}
-            <div className="animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
+            <div className="animate-fade-in" style={{ animationDelay: "0.8s", animationFillMode: "both" }}>
               <div className="bg-primary-foreground/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-primary-foreground/20">
                 <p className="text-primary-foreground/80 mb-3 md:mb-4 text-center text-xs uppercase tracking-wider">
                   Event Starts In
@@ -134,7 +151,7 @@ const Hero = () => {
 
                 <div className="flex flex-col sm:flex-row gap-2 md:gap-3 mt-4 md:mt-6">
                   <Button
-                    onClick={scrollToRegister}
+                    onClick={() => navigate("/registration")}
                     size="lg"
                     className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm md:text-base px-4 md:px-6 py-4 md:py-5 font-semibold shadow-glow flex-1"
                   >
@@ -155,7 +172,9 @@ const Hero = () => {
               </div>
 
               <div className="text-primary-foreground/70 text-xs text-center mt-4 lg:hidden">
-                <p>Speaker: <span className="text-accent font-semibold">Fred A. Rowley</span></p>
+                <p>
+                  Speaker: <span className="text-accent font-semibold">Fred A. Rowley</span>
+                </p>
                 <p className="text-[10px]">President, Solid Dosage Training Inc., USA</p>
               </div>
             </div>

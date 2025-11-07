@@ -64,86 +64,89 @@ const InvoicePage = () => {
       {/* Invoice Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-6">
-            {/* Registration Details */}
-            <Card className="p-8 border-2">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Registration Details</h2>
-              
-              <div className="space-y-4">
-                <div className="flex items-start gap-3 p-4 bg-muted rounded-lg">
-                  <User className="text-accent mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="text-sm text-muted-foreground">Full Name</p>
-                    <p className="font-semibold text-foreground">{registrationData.name}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-4 bg-muted rounded-lg">
-                  <Mail className="text-accent mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="text-sm text-muted-foreground">Email Address</p>
-                    <p className="font-semibold text-foreground">{registrationData.email}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-4 bg-muted rounded-lg">
-                  <Phone className="text-accent mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="text-sm text-muted-foreground">Mobile Number</p>
-                    <p className="font-semibold text-foreground">{registrationData.mobile}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-4 bg-muted rounded-lg">
-                  <Building2 className="text-accent mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="text-sm text-muted-foreground">Company Name</p>
-                    <p className="font-semibold text-foreground">{registrationData.company}</p>
-                  </div>
-                </div>
-
-                {registrationData.department && (
+          <div className="max-w-6xl mx-auto space-y-6">
+            {/* Two Column Layout: User Details & Price Breakdown */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Registration Details - Left */}
+              <Card className="p-8 border-2">
+                <h2 className="text-2xl font-bold text-foreground mb-6">Registration Details</h2>
+                
+                <div className="space-y-4">
                   <div className="flex items-start gap-3 p-4 bg-muted rounded-lg">
-                    <Briefcase className="text-accent mt-1 flex-shrink-0" size={20} />
+                    <User className="text-accent mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <p className="text-sm text-muted-foreground">Department</p>
-                      <p className="font-semibold text-foreground">{registrationData.department}</p>
+                      <p className="text-sm text-muted-foreground">Full Name</p>
+                      <p className="font-semibold text-foreground">{registrationData.name}</p>
                     </div>
                   </div>
-                )}
-              </div>
-            </Card>
 
-            {/* Price Breakdown */}
-            <Card className="p-8 border-2">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Price Breakdown</h2>
-              
-              <div className="space-y-4">
-                <div className="flex justify-between items-center py-3 border-b">
-                  <span className="text-muted-foreground">Workshop Fee</span>
-                  <span className="font-semibold text-foreground flex items-center gap-1">
-                    <IndianRupee size={16} />
-                    {baseAmount.toLocaleString('en-IN')}
-                  </span>
-                </div>
+                  <div className="flex items-start gap-3 p-4 bg-muted rounded-lg">
+                    <Mail className="text-accent mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <p className="text-sm text-muted-foreground">Email Address</p>
+                      <p className="font-semibold text-foreground">{registrationData.email}</p>
+                    </div>
+                  </div>
 
-                <div className="flex justify-between items-center py-3 border-b">
-                  <span className="text-muted-foreground">GST (18%)</span>
-                  <span className="font-semibold text-foreground flex items-center gap-1">
-                    <IndianRupee size={16} />
-                    {gstAmount.toLocaleString('en-IN')}
-                  </span>
-                </div>
+                  <div className="flex items-start gap-3 p-4 bg-muted rounded-lg">
+                    <Phone className="text-accent mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <p className="text-sm text-muted-foreground">Mobile Number</p>
+                      <p className="font-semibold text-foreground">{registrationData.mobile}</p>
+                    </div>
+                  </div>
 
-                <div className="flex justify-between items-center py-4 bg-primary text-primary-foreground rounded-lg px-4">
-                  <span className="text-lg font-bold">Total Amount</span>
-                  <span className="text-2xl font-bold flex items-center gap-1">
-                    <IndianRupee size={24} />
-                    {totalAmount.toLocaleString('en-IN')}
-                  </span>
+                  <div className="flex items-start gap-3 p-4 bg-muted rounded-lg">
+                    <Building2 className="text-accent mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <p className="text-sm text-muted-foreground">Company Name</p>
+                      <p className="font-semibold text-foreground">{registrationData.company}</p>
+                    </div>
+                  </div>
+
+                  {registrationData.department && (
+                    <div className="flex items-start gap-3 p-4 bg-muted rounded-lg">
+                      <Briefcase className="text-accent mt-1 flex-shrink-0" size={20} />
+                      <div>
+                        <p className="text-sm text-muted-foreground">Department</p>
+                        <p className="font-semibold text-foreground">{registrationData.department}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </Card>
+              </Card>
+
+              {/* Price Breakdown - Right */}
+              <Card className="p-8 border-2">
+                <h2 className="text-2xl font-bold text-foreground mb-6">Price Breakdown</h2>
+                
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center py-3 border-b">
+                    <span className="text-muted-foreground">Workshop Fee</span>
+                    <span className="font-semibold text-foreground flex items-center gap-1">
+                      <IndianRupee size={16} />
+                      {baseAmount.toLocaleString('en-IN')}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center py-3 border-b">
+                    <span className="text-muted-foreground">GST (18%)</span>
+                    <span className="font-semibold text-foreground flex items-center gap-1">
+                      <IndianRupee size={16} />
+                      {gstAmount.toLocaleString('en-IN')}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center py-4 bg-primary text-primary-foreground rounded-lg px-4">
+                    <span className="text-lg font-bold">Total Amount</span>
+                    <span className="text-2xl font-bold flex items-center gap-1">
+                      <IndianRupee size={24} />
+                      {totalAmount.toLocaleString('en-IN')}
+                    </span>
+                  </div>
+                </div>
+              </Card>
+            </div>
 
             {/* What's Included */}
             <Card className="p-8 border-2 bg-accent/10">
@@ -165,18 +168,11 @@ const InvoicePage = () => {
               </ul>
             </Card>
 
-            {/* Action Buttons */}
-            <div className="flex gap-4 pt-4">
-              <Button
-                variant="outline"
-                onClick={() => navigate('/registration')}
-                className="flex-1 h-14 text-lg border-2"
-              >
-                Edit Details
-              </Button>
+            {/* Action Button */}
+            <div className="flex justify-center pt-4">
               <Button
                 onClick={handleProceedToPayment}
-                className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground h-14 text-lg font-semibold shadow-glow"
+                className="w-full md:w-auto min-w-[300px] bg-accent hover:bg-accent/90 text-accent-foreground h-14 text-lg font-semibold shadow-glow"
               >
                 Proceed to Payment
               </Button>

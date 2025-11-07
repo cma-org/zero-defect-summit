@@ -28,14 +28,11 @@ const RegistrationForm = () => {
       return;
     }
 
-    // Razorpay payment page URL
-    const razorpayUrl = "https://pages.razorpay.com/pl_Rcl7g8v2n2DDkC/view";
-    
-    // Store form data in sessionStorage for retrieval after payment
+    // Store form data in sessionStorage
     sessionStorage.setItem('registrationData', JSON.stringify(formData));
     
-    // Navigate to Razorpay payment page
-    window.location.href = razorpayUrl;
+    // Navigate to invoice page
+    window.location.href = '/invoice';
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -143,7 +140,7 @@ const RegistrationForm = () => {
               type="submit"
               className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6 font-semibold shadow-glow"
             >
-              Proceed to Payment
+              Register Now
             </Button>
           </form>
         </Card>

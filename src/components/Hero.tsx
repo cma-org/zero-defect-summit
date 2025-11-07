@@ -70,6 +70,38 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 pt-24 md:pt-32 pb-12 md:pb-20">
         <div className="max-w-7xl mx-auto">
+          {/* Countdown Card at Top */}
+          <div className="mb-8 md:mb-12 animate-fade-in">
+            <div className="bg-primary-foreground/10 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-primary-foreground/20 shadow-lg">
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <Clock className="text-accent" size={20} />
+                <p className="text-primary-foreground text-sm md:text-base font-semibold uppercase tracking-wider">
+                  Event Starts In
+                </p>
+              </div>
+              <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-2xl mx-auto">
+                {[
+                  { value: timeLeft.days, label: "Days" },
+                  { value: timeLeft.hours, label: "Hours" },
+                  { value: timeLeft.minutes, label: "Minutes" },
+                  { value: timeLeft.seconds, label: "Seconds" },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-primary-foreground/15 backdrop-blur-md rounded-xl p-3 md:p-4 border border-primary-foreground/30 text-center"
+                  >
+                    <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-1">
+                      {item.value.toString().padStart(2, "0")}
+                    </div>
+                    <div className="text-xs md:text-sm text-primary-foreground/90 uppercase tracking-wider font-medium">
+                      {item.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Side - Text Content */}
             <div className="text-center lg:text-left">

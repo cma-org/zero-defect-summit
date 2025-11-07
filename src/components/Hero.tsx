@@ -127,9 +127,9 @@ const Hero = () => {
 
             {/* Right Side - Countdown Timer */}
             <div className="animate-fade-in" style={{ animationDelay: "0.8s", animationFillMode: "both" }}>
-              {/* <div className="flex justify-center mb-4">
-                <img src={initiativeLogo} alt="Initiative Logo" className="h-12 md:h-auto w-auto rounded-lg" />
-              </div> */}
+              <div className="flex justify-center mb-4">
+                <img src={initiativeLogo} alt="Initiative Logo" className="h-16 md:h-20 w-auto rounded-lg" />
+              </div>
               <div className="bg-primary-foreground/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-primary-foreground/20">
                 <p className="text-primary-foreground/80 mb-3 md:mb-4 text-center text-xs uppercase tracking-wider">
                   Event Starts In

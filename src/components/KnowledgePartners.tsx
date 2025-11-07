@@ -38,25 +38,17 @@ const KnowledgePartners = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="bg-card border-2 rounded-lg p-6 flex flex-col items-center justify-center text-center hover:shadow-lg transition-shadow min-h-[180px]"
+                className="bg-card border-2 rounded-lg p-8 flex items-center justify-center hover:shadow-lg transition-shadow"
               >
-                <div className="mb-4 h-16 flex items-center justify-center w-full">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </div>
-                <h3 className="font-bold text-foreground text-sm mb-1">
-                  {partner.name}
-                </h3>
-                {partner.tagline && (
-                  <p className="text-xs text-muted-foreground">{partner.tagline}</p>
-                )}
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="max-h-20 max-w-full object-contain"
+                />
               </div>
             ))}
           </div>

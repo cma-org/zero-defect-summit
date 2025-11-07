@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import initiativeLogo from "@/assets/initiative-logo.png";
+import mainLogo from "@/assets/main-logo.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <button onClick={() => navigate("/")} className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-            <img src={initiativeLogo} alt="An Initiative By" className="h-16 w-auto object-contain rounded-lg" />
+            <img src={mainLogo} alt="Axygen Pharmatech + Fixity Group" className="h-16 w-auto object-contain" />
           </button>
 
           {/* Desktop Menu */}

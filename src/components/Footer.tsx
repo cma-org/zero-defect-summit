@@ -1,6 +1,6 @@
 import { Mail, Phone, Globe, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import initiativeLogo from "@/assets/initiative-logo.png";
+import mainLogo from "@/assets/main-logo.png";
 
 const Footer = () => {
   const scrollToSection = (id: string) => {
@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <img src={initiativeLogo} alt="An Initiative By" className="h-20 w-auto object-contain rounded-lg" />
+            <img src={mainLogo} alt="Axygen Pharmatech + Fixity Group" className="h-20 w-auto object-contain" />
           </div>
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>

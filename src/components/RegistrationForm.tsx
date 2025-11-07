@@ -28,12 +28,14 @@ const RegistrationForm = () => {
       return;
     }
 
-    toast({
-      title: "Registration Details Received",
-      description: "Payment integration coming soon! We'll contact you to complete registration.",
-    });
-
-    console.log("Registration Data:", formData);
+    // Replace this URL with your Razorpay payment page URL
+    const razorpayUrl = "YOUR_RAZORPAY_PAYMENT_PAGE_URL";
+    
+    // Store form data in sessionStorage for retrieval after payment
+    sessionStorage.setItem('registrationData', JSON.stringify(formData));
+    
+    // Navigate to Razorpay payment page
+    window.location.href = razorpayUrl;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

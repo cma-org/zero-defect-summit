@@ -28,8 +28,8 @@ const RegistrationForm = () => {
       return;
     }
 
-    // Replace this URL with your Razorpay payment page URL
-    const razorpayUrl = "YOUR_RAZORPAY_PAYMENT_PAGE_URL";
+    // Razorpay payment page URL
+    const razorpayUrl = "https://pages.razorpay.com/pl_Rcl7g8v2n2DDkC/view";
     
     // Store form data in sessionStorage for retrieval after payment
     sessionStorage.setItem('registrationData', JSON.stringify(formData));

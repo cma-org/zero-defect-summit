@@ -52,7 +52,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <button onClick={() => navigate("/")} className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-            <img src={initiativeLogo} alt="An Initiative By" className="h-16 w-auto object-contain rounded-lg" />
+            {/* <img src={initiativeLogo} alt="An Initiative By" className="h-16 w-auto object-contain rounded-lg" /> */}
           </button>
 
           {/* Desktop Menu */}

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Clock } from "lucide-react";
 import heroImage from "@/assets/hero-pharma.jpg";
+import initiativeLogo from "@/assets/initiative-logo.png";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -127,6 +128,13 @@ const Hero = () => {
             {/* Right Side - Countdown Timer */}
             <div className="animate-fade-in" style={{ animationDelay: "0.8s", animationFillMode: "both" }}>
               <div className="bg-primary-foreground/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-primary-foreground/20">
+                <div className="flex justify-center mb-4">
+                  <img 
+                    src={initiativeLogo} 
+                    alt="Initiative Logo" 
+                    className="h-12 md:h-16 w-auto rounded-lg"
+                  />
+                </div>
                 <p className="text-primary-foreground/80 mb-3 md:mb-4 text-center text-xs uppercase tracking-wider">
                   Event Starts In
                 </p>

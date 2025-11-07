@@ -15,17 +15,10 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <img 
-              src={initiativeLogo} 
-              alt="An Initiative By" 
-              className="h-16 w-auto object-contain rounded-lg"
-            />
+            <img src={initiativeLogo} alt="An Initiative By" className="h-18 w-auto object-contain rounded-lg" />
           </div>
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">
-                <span className="text-accent">Zero-Defect</span> Workshop
-              </h3>
               <p className="text-primary-foreground/80 text-sm">
                 Premier pharmaceutical training event focused on tablet manufacturing excellence
               </p>
@@ -35,12 +28,20 @@ const Footer = () => {
               <h4 className="text-lg font-bold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link to="/" onClick={() => setTimeout(() => scrollToSection("about"), 100)} className="hover:text-accent transition-colors">
+                  <Link
+                    to="/"
+                    onClick={() => setTimeout(() => scrollToSection("about"), 100)}
+                    className="hover:text-accent transition-colors"
+                  >
                     About Workshop
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" onClick={() => setTimeout(() => scrollToSection("speaker"), 100)} className="hover:text-accent transition-colors">
+                  <Link
+                    to="/"
+                    onClick={() => setTimeout(() => scrollToSection("speaker"), 100)}
+                    className="hover:text-accent transition-colors"
+                  >
                     Speaker
                   </Link>
                 </li>
@@ -62,10 +63,7 @@ const Footer = () => {
               <div className="space-y-3 text-sm">
                 <div className="flex items-start gap-2">
                   <Mail className="text-accent mt-1 flex-shrink-0" size={16} />
-                  <a
-                    href="mailto:hello@axygenpharmatech.com"
-                    className="hover:text-accent transition-colors"
-                  >
+                  <a href="mailto:hello@axygenpharmatech.com" className="hover:text-accent transition-colors">
                     hello@axygenpharmatech.com
                   </a>
                 </div>
@@ -97,9 +95,7 @@ const Footer = () => {
 
           <div className="border-t border-primary-foreground/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/70">
-              <p>
-                © 2025 Axygen Pharmatech Pvt. Ltd. All rights reserved.
-              </p>
+              <p>© 2025 Axygen Pharmatech Pvt. Ltd. All rights reserved.</p>
               <div className="flex gap-6">
                 <a href="/privacy" className="hover:text-accent transition-colors">
                   Privacy Policy

@@ -9,7 +9,7 @@ const Navbar = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
@@ -51,16 +51,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <button
-            onClick={() => navigate("/")}
-            className="flex items-center gap-4 hover:opacity-80 transition-opacity"
-          >
-            <img 
-              src={initiativeLogo} 
-              alt="An Initiative By" 
-              className="h-12 w-auto object-contain rounded-lg"
-            />
-            <div className="text-2xl font-bold text-primary-foreground">
+          <button onClick={() => navigate("/")} className="flex items-center gap-4 hover:opacity-80 transition-opacity">
+            <img src={initiativeLogo} alt="An Initiative By" className="h-12 w-auto object-contain rounded-lg" />
+            <div className="text-xl font-bold text-primary-foreground">
               <span className="text-accent">Zero-Defect</span> Tablet Manufacturing
             </div>
           </button>
@@ -100,10 +93,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-primary-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
+          <button className="md:hidden text-primary-foreground" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>

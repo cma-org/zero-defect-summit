@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <img src={initiativeLogo} alt="An Initiative By" className="h-20 w-auto object-contain rounded-lg" />
+            <img src={initiativeLogo} alt="An Initiative By" className="h-18 w-auto object-contain rounded-lg" />
           </div>
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>

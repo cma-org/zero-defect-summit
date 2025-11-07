@@ -7,7 +7,6 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import AgendaPage from "./pages/AgendaPage";
 import RegistrationPage from "./pages/RegistrationPage";
-import SignIn from "./pages/SignIn";
 import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import NotFound from "./pages/NotFound";
@@ -25,7 +24,6 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/agenda" element={<AgendaPage />} />
           <Route path="/registration" element={<RegistrationPage />} />
-          <Route path="/signin" element={<SignIn />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

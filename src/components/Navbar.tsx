@@ -86,12 +86,6 @@ const Navbar = () => {
               Sponsors
             </button>
             <Button
-              onClick={() => navigateToPage("/signin")}
-              variant="nav"
-            >
-              Sign In
-            </Button>
-            <Button
               onClick={() => navigateToPage("/registration")}
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
             >
@@ -136,13 +130,6 @@ const Navbar = () => {
               >
                 Sponsors
               </button>
-              <Button
-                onClick={() => navigateToPage("/signin")}
-                variant="nav"
-                className="w-full"
-              >
-                Sign In
-              </Button>
               <Button
                 onClick={() => navigateToPage("/registration")}
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full"

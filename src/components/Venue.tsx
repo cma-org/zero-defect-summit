@@ -2,9 +2,8 @@ import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Venue = () => {
-  const venueAddress = "Avasa, Hyderabad";
-  const fullAddress =
-    "Survey No. 64 15, 24 25 & 26, Hitech City Main Rd, HUDA Techno Enclave, HITEC City, Hyderabad, Telangana 500081, India";
+  const venueAddress = "Hyderabad, Telangana";
+  const fullAddress = "Hyderabad, Telangana, India";
   const googleMapsUrl = `https://maps.app.goo.gl/gPXKeM7QBDuP6Qcg7`;
 
   return (
@@ -29,11 +28,7 @@ const Venue = () => {
                 <h3 className="text-2xl font-bold text-foreground">Address</h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p className="font-semibold text-foreground text-lg">{venueAddress}</p>
-                  <p className="text-sm leading-relaxed">
-                    Survey No. 64 15, 24 25 & 26, Hitech City Main Rd, HUDA Techno Enclave, HITEC City, Hyderabad,
-                    Telangana 500081
-                  </p>
-                  <p className="font-medium">India</p>
+                  <p className="text-sm leading-relaxed">{fullAddress}</p>
                 </div>
               </div>
 
@@ -59,7 +54,7 @@ const Venue = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="ITC Kohenur Hotel Location"
+                title="Hyderabad Location"
               />
             </div>
           </div>

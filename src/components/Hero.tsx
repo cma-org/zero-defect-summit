@@ -15,7 +15,7 @@ const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const targetDate = new Date("2025-12-09T09:00:00").getTime();
+    const targetDate = new Date("2025-12-11T09:00:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -100,11 +100,11 @@ const Hero = () => {
               >
                 <div className="flex items-center gap-2">
                   <Calendar className="text-accent" size={20} />
-                  <span className="text-sm md:text-base lg:text-lg">9-10 December 2025</span>
+                  <span className="text-sm md:text-base lg:text-lg">11-12 December 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="text-accent" size={20} />
-                  <span className="text-sm md:text-base lg:text-lg">Avasa Hotel, Hyderabad</span>
+                  <span className="text-sm md:text-base lg:text-lg">Hyderabad, Telangana</span>
                 </div>
               </div>
 

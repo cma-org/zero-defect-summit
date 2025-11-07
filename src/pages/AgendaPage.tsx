@@ -113,7 +113,7 @@ const AgendaPage = () => {
                 >
                   <div>
                     <div className="text-base">Day - 1</div>
-                    <div className="text-xs">Thu, Dec 9, 2025</div>
+                    <div className="text-xs">Thu, Dec 11, 2025</div>
                   </div>
                   {activeDay === "day1" && (
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent"></div>
@@ -130,7 +130,7 @@ const AgendaPage = () => {
                 >
                   <div>
                     <div className="text-base">Day - 2</div>
-                    <div className="text-xs">Fri, Dec 10, 2025</div>
+                    <div className="text-xs">Fri, Dec 12, 2025</div>
                   </div>
                   {activeDay === "day2" && (
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent"></div>

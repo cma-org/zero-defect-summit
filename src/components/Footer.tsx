@@ -1,6 +1,14 @@
 import { Mail, Phone, Globe, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4">
@@ -19,24 +27,24 @@ const Footer = () => {
               <h4 className="text-lg font-bold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#about" className="hover:text-accent transition-colors">
+                  <Link to="/" onClick={() => setTimeout(() => scrollToSection("about"), 100)} className="hover:text-accent transition-colors">
                     About Workshop
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#speaker" className="hover:text-accent transition-colors">
+                  <Link to="/" onClick={() => setTimeout(() => scrollToSection("speaker"), 100)} className="hover:text-accent transition-colors">
                     Speaker
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#agenda" className="hover:text-accent transition-colors">
+                  <Link to="/agenda" className="hover:text-accent transition-colors">
                     Agenda
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#register" className="hover:text-accent transition-colors">
+                  <Link to="/registration" className="hover:text-accent transition-colors">
                     Register
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

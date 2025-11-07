@@ -50,21 +50,20 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex flex-col gap-3 py-4">
-          <img 
-            src={initiativeLogo} 
-            alt="An Initiative By" 
-            className="h-12 w-auto object-contain rounded-lg"
-          />
-          <div className="flex items-center justify-between">
-            <button
-              onClick={() => navigate("/")}
-              className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
-            >
-              <div className="text-2xl font-bold text-primary-foreground">
-                <span className="text-accent">Zero-Defect</span> Tablet Manufacturing
-              </div>
-            </button>
+        <div className="flex items-center justify-between h-20">
+          <button
+            onClick={() => navigate("/")}
+            className="flex items-center gap-4 hover:opacity-80 transition-opacity"
+          >
+            <img 
+              src={initiativeLogo} 
+              alt="An Initiative By" 
+              className="h-12 w-auto object-contain rounded-lg"
+            />
+            <div className="text-2xl font-bold text-primary-foreground">
+              <span className="text-accent">Zero-Defect</span> Tablet Manufacturing
+            </div>
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
@@ -107,7 +106,6 @@ const Navbar = () => {
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-          </div>
         </div>
 
         {/* Mobile Menu */}

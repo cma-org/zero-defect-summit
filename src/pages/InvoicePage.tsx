@@ -65,7 +65,7 @@ const InvoicePage = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto space-y-6">
-            {/* Two Column Layout: User Details & Price Breakdown */}
+            {/* Two Column Layout: User Details & Price/Included */}
             <div className="grid md:grid-cols-2 gap-6">
               {/* Registration Details - Left */}
               <Card className="p-8 border-2">
@@ -116,57 +116,60 @@ const InvoicePage = () => {
                 </div>
               </Card>
 
-              {/* Price Breakdown - Right */}
-              <Card className="p-8 border-2">
-                <h2 className="text-2xl font-bold text-foreground mb-6">Price Breakdown</h2>
-                
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center py-3 border-b">
-                    <span className="text-muted-foreground">Workshop Fee</span>
-                    <span className="font-semibold text-foreground flex items-center gap-1">
-                      <IndianRupee size={16} />
-                      {baseAmount.toLocaleString('en-IN')}
-                    </span>
-                  </div>
+              {/* Right Column: Price Breakdown & What's Included */}
+              <div className="space-y-6">
+                {/* Price Breakdown */}
+                <Card className="p-8 border-2">
+                  <h2 className="text-2xl font-bold text-foreground mb-6">Price Breakdown</h2>
+                  
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center py-3 border-b">
+                      <span className="text-muted-foreground">Workshop Fee</span>
+                      <span className="font-semibold text-foreground flex items-center gap-1">
+                        <IndianRupee size={16} />
+                        {baseAmount.toLocaleString('en-IN')}
+                      </span>
+                    </div>
 
-                  <div className="flex justify-between items-center py-3 border-b">
-                    <span className="text-muted-foreground">GST (18%)</span>
-                    <span className="font-semibold text-foreground flex items-center gap-1">
-                      <IndianRupee size={16} />
-                      {gstAmount.toLocaleString('en-IN')}
-                    </span>
-                  </div>
+                    <div className="flex justify-between items-center py-3 border-b">
+                      <span className="text-muted-foreground">GST (18%)</span>
+                      <span className="font-semibold text-foreground flex items-center gap-1">
+                        <IndianRupee size={16} />
+                        {gstAmount.toLocaleString('en-IN')}
+                      </span>
+                    </div>
 
-                  <div className="flex justify-between items-center py-4 bg-primary text-primary-foreground rounded-lg px-4">
-                    <span className="text-lg font-bold">Total Amount</span>
-                    <span className="text-2xl font-bold flex items-center gap-1">
-                      <IndianRupee size={24} />
-                      {totalAmount.toLocaleString('en-IN')}
-                    </span>
+                    <div className="flex justify-between items-center py-4 bg-primary text-primary-foreground rounded-lg px-4">
+                      <span className="text-lg font-bold">Total Amount</span>
+                      <span className="text-2xl font-bold flex items-center gap-1">
+                        <IndianRupee size={24} />
+                        {totalAmount.toLocaleString('en-IN')}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+
+                {/* What's Included */}
+                <Card className="p-8 border-2 bg-accent/10">
+                  <h3 className="text-xl font-bold text-foreground mb-4">What's Included</h3>
+                  <ul className="space-y-3">
+                    {[
+                      "2-Day Comprehensive Training",
+                      "Workshop Materials & Resources",
+                      "Certificate of Completion",
+                      "Lunch & Refreshments",
+                      "Networking Opportunities",
+                      "Access to Expert Q&A Sessions",
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="text-accent mt-0.5 flex-shrink-0" size={20} />
+                        <span className="text-foreground/90">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </div>
             </div>
-
-            {/* What's Included */}
-            <Card className="p-8 border-2 bg-accent/10">
-              <h3 className="text-xl font-bold text-foreground mb-4">What's Included</h3>
-              <ul className="space-y-3">
-                {[
-                  "2-Day Comprehensive Training",
-                  "Workshop Materials & Resources",
-                  "Certificate of Completion",
-                  "Lunch & Refreshments",
-                  "Networking Opportunities",
-                  "Access to Expert Q&A Sessions",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent mt-0.5 flex-shrink-0" size={20} />
-                    <span className="text-foreground/90">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
 
             {/* Action Button */}
             <div className="flex justify-center pt-4">

@@ -41,22 +41,18 @@ const Speaker = () => {
                 serving as Director of Manufacturing Technical Support at Watson Laboratories, Plant Manager 
                 of Tablets and Capsules at Weider Nutrition International, Vice President of Operations at 
                 Arnet Pharmaceuticals, OROS Operations Manager at Alza Corporation, and Bulk Solids Manager 
-                at Syntex FP, Puerto Rico.
-              </p>
-
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                He holds a B.S. in Biochemistry from the University of Santo Tomas, Manila, Asia, and was 
-                awarded a doctorate degree, honoris causa, in 2006. Mr. Rowley has authored 34 peer-reviewed 
-                articles in the fields of tablet granulation, compressing, coating, and printing, and currently 
-                serves on the editorial advisory boards of both Pharmaceutical Manufacturing and Tablets and 
-                Capsules magazines.
+                at Syntex FP, Puerto Rico. He holds a B.S. in Biochemistry from the University of Santo Tomas, 
+                Manila, Asia, and was awarded a doctorate degree, honoris causa, in 2006.
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-8">
-                He has been retained as a solid dosage manufacturing expert by various law firms and pharmaceutical 
-                companies in 22 different countries. He has lectured at the FDA on tablet press weight limit setting 
-                and the overweight/oversized tablet recall issue, and lectures at both university and professional 
-                industry levels in the United States, Asia, Europe, and India in all areas of solid dosage manufacturing.
+                Mr. Rowley has authored 34 peer-reviewed articles in the fields of tablet granulation, compressing, 
+                coating, and printing, and currently serves on the editorial advisory boards of both Pharmaceutical 
+                Manufacturing and Tablets and Capsules magazines. He has been retained as a solid dosage manufacturing 
+                expert by various law firms and pharmaceutical companies in 22 different countries, has lectured at 
+                the FDA on tablet press weight limit setting and the overweight/oversized tablet recall issue, and 
+                lectures at both university and professional industry levels in the United States, Asia, Europe, 
+                and India in all areas of solid dosage manufacturing.
               </p>
 
               <div className="grid grid-cols-2 gap-4">

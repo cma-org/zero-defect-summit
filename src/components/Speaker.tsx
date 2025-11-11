@@ -35,11 +35,28 @@ const Speaker = () => {
                 President, Solid Dosage Training Inc., USA
               </p>
 
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Fred A. Rowley, President of Solid Dosage Training, Inc., is an internationally recognized 
+                solid dosage expert and a pioneer in solid dosage training. His extensive career includes 
+                serving as Director of Manufacturing Technical Support at Watson Laboratories, Plant Manager 
+                of Tablets and Capsules at Weider Nutrition International, Vice President of Operations at 
+                Arnet Pharmaceuticals, OROS Operations Manager at Alza Corporation, and Bulk Solids Manager 
+                at Syntex FP, Puerto Rico.
+              </p>
+
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                He holds a B.S. in Biochemistry from the University of Santo Tomas, Manila, Asia, and was 
+                awarded a doctorate degree, honoris causa, in 2006. Mr. Rowley has authored 34 peer-reviewed 
+                articles in the fields of tablet granulation, compressing, coating, and printing, and currently 
+                serves on the editorial advisory boards of both Pharmaceutical Manufacturing and Tablets and 
+                Capsules magazines.
+              </p>
+
               <p className="text-muted-foreground leading-relaxed mb-8">
-                An internationally recognized expert in solid dosage manufacturing, Fred A. Rowley brings 
-                unparalleled expertise in tablet compression and coating technologies. As President of 
-                Solid Dosage Training Inc., he has trained thousands of pharmaceutical professionals 
-                worldwide, helping companies achieve zero-defect manufacturing excellence.
+                He has been retained as a solid dosage manufacturing expert by various law firms and pharmaceutical 
+                companies in 22 different countries. He has lectured at the FDA on tablet press weight limit setting 
+                and the overweight/oversized tablet recall issue, and lectures at both university and professional 
+                industry levels in the United States, Asia, Europe, and India in all areas of solid dosage manufacturing.
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -49,8 +66,8 @@ const Speaker = () => {
                       <Globe className="text-accent" size={24} />
                     </div>
                     <div>
-                      <AnimatedCounter target={40} suffix="+" className="text-2xl font-bold text-foreground" />
-                      <div className="text-xs text-muted-foreground">Countries Trained</div>
+                      <AnimatedCounter target={22} suffix="+" className="text-2xl font-bold text-foreground" />
+                      <div className="text-xs text-muted-foreground">Countries Consulted</div>
                     </div>
                   </div>
                 </Card>
@@ -85,8 +102,8 @@ const Speaker = () => {
                       <BookOpen className="text-accent" size={24} />
                     </div>
                     <div>
-                      <AnimatedCounter target={100} suffix="+" className="text-2xl font-bold text-foreground" />
-                      <div className="text-xs text-muted-foreground">Training Programs</div>
+                      <AnimatedCounter target={34} className="text-2xl font-bold text-foreground" />
+                      <div className="text-xs text-muted-foreground">Peer-Reviewed Articles</div>
                     </div>
                   </div>
                 </Card>

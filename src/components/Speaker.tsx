@@ -12,47 +12,33 @@ const Speaker = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Meet Your <span className="text-accent">Expert Trainer</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Learn from a global leader in solid dosage manufacturing
-            </p>
+            <p className="text-xl text-muted-foreground">Learn from a global leader in solid dosage manufacturing</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+            <div className="animate-fade-in" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-accent rounded-2xl blur-2xl opacity-20"></div>
-                <img
-                  src={speakerImage}
-                  alt="Fred A. Rowley"
-                  className="relative rounded-2xl shadow-elegant w-full"
-                />
+                <img src={speakerImage} alt="Fred A. Rowley" className="relative rounded-2xl shadow-elegant w-full" />
               </div>
             </div>
 
-            <div className="animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+            <div className="animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "both" }}>
               <h3 className="text-3xl font-bold text-foreground mb-2">Fred A. Rowley</h3>
-              <p className="text-xl text-accent mb-6 font-semibold">
-                President, Solid Dosage Training Inc., USA
-              </p>
+              <p className="text-xl text-accent mb-6 font-semibold">President, Solid Dosage Training Inc., USA</p>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Fred A. Rowley, President of Solid Dosage Training, Inc., is an internationally recognized 
-                solid dosage expert and a pioneer in solid dosage training. His extensive career includes 
-                serving as Director of Manufacturing Technical Support at Watson Laboratories, Plant Manager 
-                of Tablets and Capsules at Weider Nutrition International, Vice President of Operations at 
-                Arnet Pharmaceuticals, OROS Operations Manager at Alza Corporation, and Bulk Solids Manager 
-                at Syntex FP, Puerto Rico. He holds a B.S. in Biochemistry from the University of Santo Tomas, 
-                Manila, Asia, and was awarded a doctorate degree, honoris causa, in 2006.
+                Fred A. Rowley, President of Solid Dosage Training, Inc., is an internationally recognized expert and
+                pioneer in solid dosage manufacturing. With a B.S. in Biochemistry from the University of Santo Tomas
+                and an honorary doctorate (2006), he has held senior roles at Watson Laboratories, Weider Nutrition,
+                Arnet Pharmaceuticals, Alza Corporation, and Syntex FP.
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Mr. Rowley has authored 34 peer-reviewed articles in the fields of tablet granulation, compressing, 
-                coating, and printing, and currently serves on the editorial advisory boards of both Pharmaceutical 
-                Manufacturing and Tablets and Capsules magazines. He has been retained as a solid dosage manufacturing 
-                expert by various law firms and pharmaceutical companies in 22 different countries, has lectured at 
-                the FDA on tablet press weight limit setting and the overweight/oversized tablet recall issue, and 
-                lectures at both university and professional industry levels in the United States, Asia, Europe, 
-                and India in all areas of solid dosage manufacturing.
+                He has authored 34 peer-reviewed articles on granulation, compression, coating, and printing, and serves
+                on the editorial boards of Pharmaceutical Manufacturing and Tablets and Capsules. A sought-after
+                consultant and lecturer, Mr. Rowley has advised companies and law firms in 22 countries and presented at
+                the FDA and international industry forums.
               </p>
 
               <div className="grid grid-cols-2 gap-4">

@@ -63,14 +63,6 @@ const AgendaPage = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                onClick={handleAddToCalendar}
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base px-8"
-              >
-                <CalendarIcon className="mr-2" size={20} />
-                ADD TO CALENDAR
-              </Button>
-              <Button
                 onClick={handlePrintAgenda}
                 size="lg"
                 variant="nav"

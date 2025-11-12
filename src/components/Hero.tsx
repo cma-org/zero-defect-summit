@@ -80,12 +80,12 @@ const Hero = () => {
               </div>
 
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight animate-fade-in"
+                className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight animate-fade-in"
                 style={{ animationDelay: "0.2s", animationFillMode: "both" }}
               >
-                Zero-Defect Tablet
+                Zero-Defect Tablet Manufacturing
                 <br />
-                <span className="text-accent">Manufacturing Workshop</span>
+                <span className="text-accent"> Workshop</span>
               </h1>
 
               <p
@@ -105,12 +105,12 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="text-accent" size={20} />
-                  <span className="text-sm md:text-base lg:text-lg">Hyderabad, Telangana</span>
+                  <span className="text-sm md:text-base lg:text-lg">ITC Kohenu, Hyderabad, Telangana</span>
                 </div>
               </div>
 
               <div
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in hidden lg:flex"
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in lg:flex"
                 style={{ animationDelay: "1s", animationFillMode: "both" }}
               ></div>
 

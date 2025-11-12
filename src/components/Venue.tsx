@@ -2,9 +2,9 @@ import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Venue = () => {
-  const venueAddress = "Hyderabad, Telangana";
-  const fullAddress = "Hyderabad, Telangana, India";
-  const googleMapsUrl = `https://maps.app.goo.gl/gPXKeM7QBDuP6Qcg7`;
+  const venueAddress = "ITC Kohenur, Hyderabad, Telangana";
+  const fullAddress = "Survey No, 83/1, Hyderabad Knowledge City, Plot No.5, Silpa Gram Craft Village, Madhapur, Hyderabad, Telangana 500032, India";
+  const googleMapsUrl = `https://maps.app.goo.gl/4Ea8dxw7FVmXuEA56`;
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-secondary/30">
@@ -47,7 +47,7 @@ const Venue = () => {
             {/* Map Section */}
             <div className="bg-card border-2 rounded-lg overflow-hidden h-[500px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2838426899524!2d78.38194097515894!3d17.445833683456756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93dc8c5d69df%3A0x19688beb557fa0ee!2sITC%20Kohenur%2C%20a%20Luxury%20Collection%20Hotel%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5666144049897!2d78.38054818568153!3d17.43257395887624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9388a09a79f5%3A0x9ff99841b5ec9e9c!2sITC%20Kohenur%2C%20a%20Luxury%20Collection%20Hotel%2C%20Hyderabad!5e0!3m2!1sen!2sus!4v1762927571819!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

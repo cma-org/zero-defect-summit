@@ -136,7 +136,7 @@ const Sponsors = () => {
               <img 
                 src={initiativeLogo} 
                 alt="Initiative Logo" 
-                className="w-auto object-contain"
+                className="w-auto h-60 object-contain"
               />
             </div>
           </div>

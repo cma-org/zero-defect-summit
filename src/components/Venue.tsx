@@ -114,30 +114,12 @@ const Venue = () => {
                   </p>
                 </li>
                 <li className="flex gap-3">
-                  <TrainFront className="h-5 w-5 mt-1 text-primary" />
-                  <p className="text-muted-foreground">
-                    Nearest Metro: <span className="text-foreground font-medium">Raidurg (Blue Line)</span>, ~7–10 min cab ride.
-                  </p>
-                </li>
-                <li className="flex gap-3">
                   <Clock className="h-5 w-5 mt-1 text-primary" />
                   <p className="text-muted-foreground">
                     Recommended arrival: 15–20 mins before session start for check-in.
                   </p>
                 </li>
               </ul>
-
-              {/* Landmark chips */}
-              <div className="mt-5 flex flex-wrap gap-2">
-                {["Inorbit Mall", "Mindspace", "Durgam Cheruvu"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-flex items-center rounded-full border px-3 py-1 text-sm text-muted-foreground"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </div>
 
             {/* Quick Facts */}

@@ -1,5 +1,6 @@
 import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import itcKohenurImage from "@/assets/itc-kohenur.png";
 
 const Venue = () => {
   const venueAddress = "ITC Kohenur, Hyderabad, Telangana";
@@ -44,17 +45,12 @@ const Venue = () => {
               </div>
             </div>
 
-            {/* Map Section */}
+            {/* Hotel Image */}
             <div className="bg-card border-2 rounded-lg overflow-hidden h-[500px]">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5666144049897!2d78.38054818568153!3d17.43257395887624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9388a09a79f5%3A0x9ff99841b5ec9e9c!2sITC%20Kohenur%2C%20a%20Luxury%20Collection%20Hotel%2C%20Hyderabad!5e0!3m2!1sen!2sus!4v1762927571819!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Hyderabad Location"
+              <img 
+                src={itcKohenurImage} 
+                alt="ITC Kohenur Hotel Hyderabad" 
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

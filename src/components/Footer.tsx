@@ -1,6 +1,6 @@
 import { Mail, Phone, Globe, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import mainLogo from "@/assets/main-logo.jpg";
+import mainLogo from "@/assets/initiative-logo.png";
 
 const Footer = () => {
   const scrollToSection = (id: string) => {
@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-2xl font-bold mb-4">
-                <span className="text-accent">Zero-Defect</span> Workshop
+                <span className="text-accent">Zero-Defect Tablet Manufacturing</span> Workshop
               </h3>
               <p className="text-primary-foreground/80 text-sm">
                 Premier pharmaceutical training event focused on tablet manufacturing excellence
@@ -98,7 +98,7 @@ const Footer = () => {
 
           <div className="border-t border-primary-foreground/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/70">
-              <p>© 2025 Axygen Pharmatech Pvt. Ltd. All rights reserved.</p>
+              <p>© 2025 Axygen Pharmatech. All rights reserved.</p>
               <div className="flex gap-6">
                 <a href="/privacy" className="hover:text-accent transition-colors">
                   Privacy Policy

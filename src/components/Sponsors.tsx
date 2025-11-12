@@ -132,12 +132,12 @@ const Sponsors = () => {
 
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-center text-foreground mb-8">
-              Organized By
+              An Initiative By
             </h3>
             <div className="flex flex-col md:flex-row justify-center items-center gap-8">
               <Card className="p-6 border-2 hover:shadow-elegant transition-all duration-300">
                 <h4 className="text-xl font-bold text-center text-foreground">
-                  Axygen Pharmatech Pvt. Ltd.
+                  Axygen Pharmatech
                 </h4>
               </Card>
               <Card className="p-6 border-2 hover:shadow-elegant transition-all duration-300">

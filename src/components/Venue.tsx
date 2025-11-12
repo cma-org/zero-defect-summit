@@ -36,7 +36,7 @@ const Venue = () => {
             {venueName}
           </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Our location and how you can get here
+            Our location
           </p>
         </div>
 
@@ -50,12 +50,12 @@ const Venue = () => {
                 <img
                   src={itcKohenurImage}
                   alt="ITC Kohenur, Hyderabad"
-                  className="w-full h-64 md:h-80 object-cover"
+                  className="w-full h-64 md:h-96 object-cover"
                 />
               </div>
               <div className="overflow-hidden rounded-2xl border bg-card shadow-sm">
                 <iframe
-                  className="w-full aspect-[4/3] md:aspect-[16/9]"
+                  className="w-full aspect-[4/3] md:aspect-[18/9]"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5666144049897!2d78.38054818568153!3d17.43257395887624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9388a09a79f5%3A0x9ff99841b5ec9e9c!2sITC%20Kohenur%2C%20a%20Luxury%20Collection%20Hotel%2C%20Hyderabad!5e0!3m2!1sen!2sus!4v1762927571819!5m2!1sen!2sus"
                   style={{ border: 0 }}
                   allowFullScreen

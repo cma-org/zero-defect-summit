@@ -132,32 +132,12 @@ const Sponsors = () => {
           </div>
 
           <div className="mt-16">
-            <h3 className="text-2xl font-bold text-center text-foreground mb-4">
-              An Initiative By
-            </h3>
             <div className="flex justify-center mb-8">
               <img 
                 src={initiativeLogo} 
                 alt="Initiative Logo" 
-                className="h-16 object-contain"
+                className="w-auto object-contain"
               />
-            </div>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-              <Card className="p-6 border-2 hover:shadow-elegant transition-all duration-300">
-                <h4 className="text-xl font-bold text-center text-foreground">
-                  Axygen Pharmatech
-                </h4>
-              </Card>
-              <Card className="p-6 border-2 hover:shadow-elegant transition-all duration-300">
-                <h4 className="text-xl font-bold text-center text-foreground">
-                  Fixity Group
-                </h4>
-              </Card>
-              <Card className="p-6 border-2 hover:shadow-elegant transition-all duration-300">
-                <h4 className="text-xl font-bold text-center text-foreground">
-                  Akshara Life Care
-                </h4>
-              </Card>
             </div>
           </div>
         </div>

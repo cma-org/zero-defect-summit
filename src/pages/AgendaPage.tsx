@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Clock, Coffee, Utensils, Download, Calendar as CalendarIcon, Printer } from "lucide-react";
+import { Clock, Coffee, Utensils, Download } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WorkshopBrochure from "@/assets/Workshop_Brochure.pdf";
 
 const AgendaPage = () => {
   const [activeDay, setActiveDay] = useState<"day1" | "day2">("day1");
@@ -38,13 +39,13 @@ const AgendaPage = () => {
 
   const sessions = activeDay === "day1" ? day1Sessions : day2Sessions;
 
-  const handleAddToCalendar = () => {
-    // ICS file generation logic would go here
-    alert("Add to Calendar functionality - Coming Soon!");
-  };
-
-  const handlePrintAgenda = () => {
-    window.print();
+  const handleDownloadPDF = () => {
+    const link = document.createElement('a');
+    link.href = WorkshopBrochure;
+    link.download = 'Workshop_Brochure.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -63,13 +64,13 @@ const AgendaPage = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                onClick={handlePrintAgenda}
+                onClick={handleDownloadPDF}
                 size="lg"
                 variant="nav"
                 className="font-semibold text-base px-8"
               >
-                <Printer className="mr-2" size={20} />
-                PRINT AGENDA
+                <Download className="mr-2" size={20} />
+                DOWNLOAD PDF
               </Button>
             </div>
           </div>
@@ -191,7 +192,7 @@ const AgendaPage = () => {
               <Button
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
-                onClick={() => window.print()}
+                onClick={handleDownloadPDF}
               >
                 <Download className="mr-2" size={20} />
                 Download PDF

@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, User, Building2, Briefcase, CheckCircle2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { saveRegistration } from "@/lib/api";
 import { z } from "zod";
 
 // Validation schema
@@ -58,12 +58,8 @@ const RegistrationForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Send cleaned data to MongoDB via edge function
-      const { data, error } = await supabase.functions.invoke('save-registration', {
-        body: dataToValidate,
-      });
-
-      if (error) throw error;
+      // Send cleaned data to MongoDB via API
+      await saveRegistration(dataToValidate);
 
       toast({
         title: "Registration Successful!",
@@ -80,9 +76,10 @@ const RegistrationForm = () => {
 
     } catch (error) {
       console.error('Registration error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'There was an error saving your registration. Please try again.';
       toast({
         title: "Registration Failed",
-        description: "There was an error saving your registration. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {

@@ -1,73 +1,225 @@
-# Welcome to your Lovable project
+# Zero Defect Summit - Event Registration Platform
 
-## Project info
+A comprehensive event registration and payment system built with React, TypeScript, Express, and MongoDB.
 
-**URL**: https://lovable.dev/projects/36ea19b5-8c09-451e-be46-ce27357433b6
+## Project Overview
 
-## How can I edit this code?
+This project is a full-stack event registration platform for the Zero Defect Summit workshop. It features:
 
-There are several ways of editing your application.
+- Modern, responsive frontend built with React and Vite
+- RESTful API backend with Express.js
+- MongoDB database for data persistence
+- Razorpay payment integration
+- Registration form with validation
+- Invoice generation
+- Rate limiting and security features
 
-**Use Lovable**
+## Technologies Used
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/36ea19b5-8c09-451e-be46-ce27357433b6) and start prompting.
+### Frontend
+- **Vite** - Fast build tool and dev server
+- **TypeScript** - Type-safe JavaScript
+- **React** - UI library
+- **shadcn/ui** - Component library
+- **Tailwind CSS** - Utility-first CSS framework
+- **Zod** - Schema validation
 
-Changes made via Lovable will be committed automatically to this repo.
+### Backend
+- **Node.js** - JavaScript runtime
+- **Express.js** - Web framework
+- **MongoDB** - NoSQL database
+- **express-validator** - Request validation
+- **CORS** - Cross-origin resource sharing
 
-**Use your preferred IDE**
+## Project Structure
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```
+zero-defect-summit/
+├── backend/              # Express.js backend API
+│   ├── src/
+│   │   ├── config/      # Database configuration
+│   │   ├── middleware/  # Rate limiting, etc.
+│   │   ├── routes/      # API routes
+│   │   └── server.js    # Main server file
+│   ├── package.json
+│   └── .env.example
+├── src/                  # Frontend React application
+│   ├── components/      # React components
+│   ├── pages/          # Page components
+│   ├── lib/            # API client and utilities
+│   └── assets/         # Images and static files
+├── public/
+└── package.json
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Setup Instructions
 
-Follow these steps:
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+- MongoDB Atlas account (or local MongoDB)
+- Razorpay account
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+### 1. Clone the Repository
+```bash
 git clone <YOUR_GIT_URL>
+cd zero-defect-summit
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 2. Setup Backend
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+cd backend
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Copy environment file
+cp .env.example .env
+```
+
+Edit `backend/.env` and add your configuration:
+```env
+PORT=3001
+MONGODB_URI=your_mongodb_connection_string
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+RAZORPAY_WEBHOOK_SECRET=your_razorpay_webhook_secret
+FRONTEND_URL=http://localhost:5173
+```
+
+Start the backend server:
+```bash
+# Development mode with auto-reload
+npm run dev
+
+# Or production mode
+npm start
+```
+
+The backend API will be available at `http://localhost:3001`
+
+### 3. Setup Frontend
+
+Open a new terminal and navigate to the project root:
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env file (if needed)
+# Add: VITE_API_URL=http://localhost:3001
+```
+
+Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The frontend will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## API Endpoints
 
-**Use GitHub Codespaces**
+### Health Check
+- `GET /health` - Check server status
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Registration
+- `POST /api/registration/save-registration` - Save registration data
 
-## What technologies are used for this project?
+### Razorpay
+- `POST /api/razorpay/create-order` - Create payment order
+- `POST /api/razorpay/webhook` - Handle payment webhooks
 
-This project is built with:
+## MongoDB Schema
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Registrations Collection
+```javascript
+{
+  _id: ObjectId,
+  name: String,
+  email: String (indexed, lowercase),
+  mobile: String,
+  department: String (optional),
+  company: String,
+  razorpay_payment_id: String (optional),
+  razorpay_order_id: String (optional),
+  payment_status: String (enum: 'pending', 'completed'),
+  amount: Number (optional),
+  createdAt: Date,
+  updatedAt: Date
+}
+```
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/36ea19b5-8c09-451e-be46-ce27357433b6) and click on Share -> Publish.
+### Frontend Deployment
+You can deploy the frontend using:
+- Vercel
+- Netlify
+- GitHub Pages
+- [Lovable](https://lovable.dev)
 
-## Can I connect a custom domain to my Lovable project?
+Build the frontend:
+```bash
+npm run build
+```
 
-Yes, you can!
+### Backend Deployment
+You can deploy the backend using:
+- Heroku
+- Railway
+- DigitalOcean
+- AWS EC2
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Make sure to:
+1. Set all environment variables
+2. Configure MongoDB connection string
+3. Set up Razorpay webhook URL
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Environment Variables
+
+### Frontend (.env)
+```env
+VITE_API_URL=https://your-backend-api.com
+```
+
+### Backend (.env)
+```env
+PORT=3001
+MONGODB_URI=mongodb+srv://...
+RAZORPAY_KEY_ID=rzp_...
+RAZORPAY_KEY_SECRET=...
+RAZORPAY_WEBHOOK_SECRET=...
+FRONTEND_URL=https://your-frontend.com
+```
+
+## Features
+
+- ✅ User registration with validation
+- ✅ MongoDB database integration
+- ✅ Razorpay payment gateway
+- ✅ Invoice generation
+- ✅ Rate limiting (5 requests per hour per IP)
+- ✅ Duplicate registration prevention
+- ✅ Mobile number formatting
+- ✅ Email normalization
+- ✅ Responsive design
+- ✅ Error handling
+- ✅ CORS configuration
+
+## Security Features
+
+- Rate limiting to prevent abuse
+- Input validation and sanitization
+- Duplicate registration detection
+- Secure environment variable handling
+- CORS protection
+- Webhook signature verification
+
+## Support
+
+For any issues or questions, please contact:
+- Email: hello@axygenpharmatech.com
+- Phone: +91 9603978651
+
+## License
+
+Private - All rights reserved

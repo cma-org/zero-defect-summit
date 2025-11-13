@@ -16,7 +16,9 @@ interface RegistrationData {
 
 const InvoicePage = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [registrationData, setRegistrationData] = useState<RegistrationData | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const storedData = sessionStorage.getItem('registrationData');

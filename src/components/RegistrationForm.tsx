@@ -6,6 +6,16 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, User, Building2, Briefcase, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+// Validation schema
+const registrationSchema = z.object({
+  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
+  email: z.string().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  mobile: z.string().regex(/^[6-9]\d{9}$/, "Mobile number must be 10 digits starting with 6-9"),
+  company: z.string().trim().min(2, "Company name must be at least 2 characters").max(200, "Company name must be less than 200 characters"),
+  department: z.string().max(100, "Department name must be less than 100 characters").optional(),
+});
 
 const RegistrationForm = () => {
   const { toast } = useToast();
@@ -22,21 +32,35 @@ const RegistrationForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.mobile || !formData.company) {
-      toast({
-        title: "Required Fields Missing",
-        description: "Please fill in all required fields",
-        variant: "destructive",
-      });
-      return;
+    // Clean mobile number (remove spaces, dashes, and +91 country code)
+    const cleanedMobile = formData.mobile.replace(/[\s\-+]/g, '').replace(/^91/, '');
+    
+    const dataToValidate = {
+      ...formData,
+      mobile: cleanedMobile,
+    };
+
+    // Validate with Zod
+    try {
+      registrationSchema.parse(dataToValidate);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const firstError = error.errors[0];
+        toast({
+          title: "Validation Error",
+          description: firstError.message,
+          variant: "destructive",
+        });
+        return;
+      }
     }
 
     setIsSubmitting(true);
 
     try {
-      // Send data to MongoDB via edge function
+      // Send cleaned data to MongoDB via edge function
       const { data, error } = await supabase.functions.invoke('save-registration', {
-        body: formData,
+        body: dataToValidate,
       });
 
       if (error) throw error;
@@ -47,7 +71,7 @@ const RegistrationForm = () => {
       });
 
       // Store form data in sessionStorage for invoice page
-      sessionStorage.setItem('registrationData', JSON.stringify(formData));
+      sessionStorage.setItem('registrationData', JSON.stringify(dataToValidate));
       
       // Navigate to invoice page
       setTimeout(() => {
@@ -130,10 +154,13 @@ const RegistrationForm = () => {
                 type="tel"
                 value={formData.mobile}
                 onChange={handleChange}
-                placeholder="+91 98765 43210"
+                placeholder="9876543210 (10 digits)"
                 required
                 className="border-2 h-12"
               />
+              <p className="text-xs text-muted-foreground mt-1">
+                Enter 10-digit mobile number (you can include +91, spaces, or dashes - they'll be auto-removed)
+              </p>
             </div>
 
             <div>

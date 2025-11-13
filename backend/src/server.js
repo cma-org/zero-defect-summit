@@ -30,11 +30,23 @@ const corsOptions = {
     // In production, use the configured FRONTEND_URL
     const allowedOrigins = process.env.FRONTEND_URL 
       ? process.env.FRONTEND_URL.split(',').map(url => url.trim())
-      : ['http://localhost:5173', 'http://localhost:8080'];
+      : [
+          'http://localhost:5173', 
+          'http://localhost:8080',
+          'https://zero-defect-summit.vercel.app'
+        ];
     
-    if (allowedOrigins.includes(origin)) {
+    // Check if origin matches any allowed origin (with or without trailing slash)
+    const normalizedOrigin = origin.replace(/\/$/, ''); // Remove trailing slash
+    const isAllowed = allowedOrigins.some(allowed => {
+      const normalizedAllowed = allowed.replace(/\/$/, '');
+      return normalizedOrigin === normalizedAllowed || origin === normalizedAllowed;
+    });
+    
+    if (isAllowed) {
       callback(null, true);
     } else {
+      console.warn(`CORS blocked origin: ${origin}`);
       callback(new Error('Not allowed by CORS'));
     }
   },

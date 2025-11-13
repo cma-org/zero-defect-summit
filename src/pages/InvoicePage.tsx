@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { IndianRupee, User, Mail, Phone, Building2, Briefcase, CheckCircle2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface RegistrationData {
   name: string;

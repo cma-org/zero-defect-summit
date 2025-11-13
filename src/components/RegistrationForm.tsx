@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, User, Building2, Briefcase, CheckCircle2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const RegistrationForm = () => {
   const { toast } = useToast();
@@ -16,7 +17,9 @@ const RegistrationForm = () => {
     company: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.name || !formData.email || !formData.mobile || !formData.company) {
@@ -28,11 +31,39 @@ const RegistrationForm = () => {
       return;
     }
 
-    // Store form data in sessionStorage
-    sessionStorage.setItem('registrationData', JSON.stringify(formData));
-    
-    // Navigate to invoice page
-    window.location.href = '/invoice';
+    setIsSubmitting(true);
+
+    try {
+      // Send data to MongoDB via edge function
+      const { data, error } = await supabase.functions.invoke('save-registration', {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Registration Successful!",
+        description: "Your registration has been saved to the database.",
+      });
+
+      // Store form data in sessionStorage for invoice page
+      sessionStorage.setItem('registrationData', JSON.stringify(formData));
+      
+      // Navigate to invoice page
+      setTimeout(() => {
+        window.location.href = '/invoice';
+      }, 1000);
+
+    } catch (error) {
+      console.error('Registration error:', error);
+      toast({
+        title: "Registration Failed",
+        description: "There was an error saving your registration. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -139,8 +170,9 @@ const RegistrationForm = () => {
             <Button
               type="submit"
               className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6 font-semibold shadow-glow"
+              disabled={isSubmitting}
             >
-              Register Now
+              {isSubmitting ? "Submitting..." : "Register Now"}
             </Button>
           </form>
         </Card>

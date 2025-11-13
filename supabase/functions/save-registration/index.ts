@@ -116,8 +116,8 @@ serve(async (req) => {
     const client = new MongoClient();
     await client.connect(mongoUri);
 
-    // Get database and collection
-    const db = client.database();
+    // Get database and collection - explicitly specify database name
+    const db = client.database('pharma');
     const registrations = db.collection('registrations');
 
     // Check for duplicate registration (same email within last 24 hours)

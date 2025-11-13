@@ -66,7 +66,7 @@ serve(async (req) => {
       await client.connect(mongoUri);
 
       try {
-        const db = client.database();
+        const db = client.database('pharma');
         const registrations = db.collection('registrations');
 
         // Save the registration with payment confirmation

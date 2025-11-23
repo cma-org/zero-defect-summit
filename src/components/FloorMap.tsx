@@ -1,4 +1,5 @@
 import React from "react";
+import mapImage from "@/assets/map.png";
 import "./FloorMap.css";
 
 interface Hotspot {
@@ -52,7 +53,7 @@ const FloorMap = () => {
 
         <div className="floor-map-container shadow-lg rounded-xl border bg-card">
           <img
-            src="/map.png"
+            src={mapImage}
             alt="Event Floor Map"
             className="floor-map-image"
           />

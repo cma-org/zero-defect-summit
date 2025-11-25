@@ -11,7 +11,6 @@ import InvoicePage from "./pages/InvoicePage";
 import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import NotFound from "./pages/NotFound";
-import FloorMap from "@/components/FloorMap";
 
 const queryClient = new QueryClient();
 
@@ -29,7 +28,6 @@ const App = () => (
           <Route path="/invoice" element={<InvoicePage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/floor-plan" element={<FloorMap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
